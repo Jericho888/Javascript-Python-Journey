@@ -75,28 +75,46 @@
                 // 1.) Complicated Tax Calculator
                 // ====================
                 //START
-                const userMonthGrossIncome = parseInt(prompt("please input your monthly gross income!"))
-                const userTaxBrack = "n/a"
-                if(userMonthGrossIncome <= 500) {
-                    let userTaxBrack = "Low Tax Bracket"
-                    let userTaxes = userMonthGrossIncome * 0
-                    userChildAm = parseInt(prompt("In your familia, How many children do you have?"))
-                    alert (`Your Gross income will be $${userMonthGrossIncome}. You will be in ${userTaxBrack}.
-                     You will owe $${userTaxes} in Taxes. Your children's benefits will be $${userChildAm * 10}. 
-                     Your net income will be $${userMonthGrossIncome + (userChildAm * 10) - userTaxes}`)
-                }
-                else if (userMonthGrossIncome > 700) {
-                    let userTaxBrack = "HIGH TAX BRACKET"
-                    if (userMonthGrossIncome * 0.15 > 500 && userMonthGrossIncome * 0.15 <= 700) {
-                        let userTaxes = userMonthGrossIncome * 0.15
-                    }
-                    else if (userMonthGrossIncome * 0.15 > 700) {
-                        let userTaxes = userMonthGrossIncome * 0.25
-                    }
-                    alert (`Your Gross income will be $${userMonthGrossIncome}. You will be in ${userTaxBrack}.
-                    You will owe $${userTaxes} in taxes. Your net income is $${userMonthGrossIncome - userTaxes}`)
+                //--------------------------------------------------------------------------------
+                const MonthIn = parseInt(prompt("Please enter your monthly gross income!"))
+                
+
+                // This is the LOW $ Tax Bracket. 
+
+
+                if(MonthIn <= 500) {
+                    let TaxB = "Low Tax Bracket";                  
+                    let Taxes = MonthIn * 0;
+                    Child = parseInt(prompt("In your familia, How many children do you have?"));      //Ask user how many children they have
+                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. 
+                     You will owe $${Taxes} in Taxes. Your children's benefits will be $${Child * 10}. 
+                     Your net income will be $${MonthIn + (Child * 10) - Taxes}`);  //Calculating the Children benefits, 
                 }
 
+                // This is the Medium $ Tax Bracket.
+
+                else if (MonthIn > 500 && MonthIn <= 700) {
+                    let TaxB = "Medium Tax Bracket";
+                    let Taxes = (MonthIn - 500) * 0.15;
+                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in taxes.)
+                    Your net income will be $${MonthIn - Taxes}`);
+                }
+
+                // This is the High $ Tax Bracket.
+
+                else if (MonthIn > 700) {
+                    let TaxB = "High Tax Bracket"
+                    let Taxes = (((MonthIn - (MonthIn - 700) - 500) * 0.15) + ((MonthIn - 700) * 0.25))
+                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in taxes. Your net income will be $${MonthIn - Taxes}`);
+                }
+
+                // This is when user enter incorrect value.
+
+                else{
+                    alert ("Incorrect value! Please incert numbers ONLY.")
+                }
+                //------------------------------------------------------------------
+                //END
 
             </script>
 
@@ -116,7 +134,8 @@
                 // =================== 
                 // 2.) Person's Details
                 // ===================
-
+                //START
+                //-----------------------------------------------------
             </script>
         </ol>    
     </body>
