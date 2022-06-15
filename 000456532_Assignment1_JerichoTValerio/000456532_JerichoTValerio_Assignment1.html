@@ -6,7 +6,7 @@
         <style>
             body {
                 font-family: helvetica;
-                background-color: #FFDBDB;
+                background: linear-gradient(#f5f5f5, #F8F0E3, #fffff2, #fbf7f5);
             }
             h1 {
                 color: crimson;
@@ -74,59 +74,63 @@
             </li>
 
             <script>
-                // ====================
+                // ==============================
                 // 1.) Complicated Tax Calculator
-                // ====================
+                // ==============================
                 //START
                 //--------------------------------------------------------------------------------
                 const MonthIn = parseInt(prompt("Please enter your monthly gross income!"))
                 
 
-                // This is the LOW $ Tax Bracket. 
+                // This is the LOW $ Tax Bracket. This bracket shows the children's benefits for people below $500 for thge monthly gross income. 
 
 
                 if(MonthIn <= 500) {
                     let TaxB = "Low Tax Bracket";                  
-                    let Taxes = MonthIn * 0;  // made Taxes from Monthly Gross Income multiply by 0
-                    Child = parseInt(prompt("In your familia, How many children do you have?"));      //Ask user how many children they have
+                    let Taxes = MonthIn * 0;  // made Taxes from Monthly Gross Income multiply by 0 .
+                    Child = parseInt(prompt("In your familia, How many children do you have?"));    //Ask user how many children they have.
                     alert 
-                    (`Your gross income will be $${MonthIn}.
+                    (`(づ-̩̩̩-̩̩̩_-̩̩̩-̩̩̩)づ   Your gross income will be $${MonthIn}.
                      You will be in ${TaxB}.
                       You will owe $${Taxes} in Taxes. 
                       Your children's benefits will be $${Child * 10}. 
-                     Your net income will be $${MonthIn + (Child * 10) - Taxes}.`);  //Calculating the Children benefits, Displaying results
+                     Your net income will be $${MonthIn + (Child * 10) - Taxes}.`);  //Calculating the Children benefits, Displaying results.
                 }
 
                 // This is the Medium $ Tax Bracket.
 
                 else if (MonthIn > 500 && MonthIn <= 700) {
                     let TaxB = "Medium Tax Bracket";
-                    let Taxes = (MonthIn - 500) * 0.15;  //Made Taxes from Monthly Gross Income minus 500 then, multiply by 0.15
+                    let Taxes = (MonthIn - 500) * 0.15;  //Made Taxes from Monthly Gross Income minus 500 then, multiply by 0.15 .
                     alert 
-                    (`Your gross income will be $${MonthIn}.
+                    (`(づ-̩̩̩-̩̩̩_-̩̩̩-̩̩̩)づ   Your gross income will be $${MonthIn}.
                      You will be in ${TaxB}. 
                     You will owe $${Taxes} in taxes.)
-                    Your net income will be $${MonthIn - Taxes}.`); // Displays results, showing the calculations 
+                    Your net income will be $${MonthIn - Taxes}.`); // Displays results, showing the calculations.
                 }
 
                 // This is the High $ Tax Bracket.
 
                 else if (MonthIn > 700) {
                     let TaxB = "High Tax Bracket"
-                    let Taxes = (((MonthIn - (MonthIn - 700) - 500) * 0.15) + ((MonthIn - 700) * 0.25))  
+                    let Taxes = (((MonthIn - (MonthIn - 700) - 500) * 0.15) + ((MonthIn - 700) * 0.25)) 
+
+                     //Since this is the high tax bracket, it means there are high gross income. So, what will we do is first we will minus whatever is higher than 700, then we minus 500 and times 0.15
+                     //(becasue should be 15% of the sum that is over 500) minus 700 and times 0.25 since, less than or equal to 700 and 25% of over 700. The higher the income, the ore tax taken.
+
                     alert 
-                    (`Your gross income will be $${MonthIn}. 
+                    (`(づ-̩̩̩-̩̩̩_-̩̩̩-̩̩̩)づ   Your gross income will be $${MonthIn}. 
                     You will be in ${TaxB}. 
                     You will owe $${Taxes} in taxes. 
-                    Your net income will be $${MonthIn - Taxes}.`);  //Displays results and shows tha calculation.
+                    Your net income will be $${MonthIn - Taxes}.`);  //Displays results and shows the calculation.
                 }
 
-                // (Below) This is when user enter incorrect value, for example letters rather than numbers.
+                // (Below) This is when user enter incorrect value, for example letters rather than numbers. Will telll them to input numbers only.
 
                 else{
                     alert ("Incorrect value! Please incert numbers ONLY.")
                 }
-                //--------------------------------------------------------------------------------
+                //---------------------------------------------------------------------------------------------------------
                 //**END**
 
             </script>
@@ -145,26 +149,28 @@
 
             <script>
 
-                // =================== 
+                // =====================
                 // 2.) Person's Details
-                // ===================
+                // =====================
                 //START
                 //-----------------------------------------------------
                 const name = prompt("Greetings, Please enter your first and last name."); //Asking users to enter their names.
-                if (name.charAt(0) === "A" || name.charAt(0) === "E" || name.charAt(0) === "I" || name.charAt(0) === "O" || name.charAt(0) === "U") {
+                if (name.charAt(0) === "A" || name.charAt(0) === "E" || name.charAt(0) === "I" || name.charAt(0) === "O" || name.charAt(0) === "U") {  //Inputting the vowels.
                     alert 
-                    (`Hello ${name}!
+                    (`ʅ（‾◡◝）ʃ   Hello ${name}! 
                      Your name is ${name.length -1} letters long. 
                     Your name begins with a vowel which is the letter "${name.charAt(0)}"),
                     The last letter of yout name is "${name.charAt(name.length -1)}".`)
                 }
 
+                  //This function is for letting users know how many letters are in their name, and first and last letter of their name.
+
                 else {
                     alert
-                     (`Hello ${name}! 
+                     (`ʅ（‾◡◝）ʃ   Hello ${name}! 
                     Your name is ${name.length -1} letters long.
                     Your name begins with a consonant which is the letter "${name.charAt(0)}",
-                    The last letter of your name is "${name.charAt(name.length -1)}".`)
+                    The last letter of your name is "${name.charAt(name.length -1)}".`)            // Greeting the user, 0 means from the start of the letter and -1 means in the end of a letter.
                 }
                 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //**END**
