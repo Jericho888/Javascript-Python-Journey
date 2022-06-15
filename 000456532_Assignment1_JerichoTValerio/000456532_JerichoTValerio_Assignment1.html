@@ -84,37 +84,37 @@
 
                 if(MonthIn <= 500) {
                     let TaxB = "Low Tax Bracket";                  
-                    let Taxes = MonthIn * 0;
+                    let Taxes = MonthIn * 0;  // made Taxes from Monthly Gross Income multiply by 0
                     Child = parseInt(prompt("In your familia, How many children do you have?"));      //Ask user how many children they have
-                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. 
-                     You will owe $${Taxes} in Taxes. Your children's benefits will be $${Child * 10}. 
-                     Your net income will be $${MonthIn + (Child * 10) - Taxes}`);  //Calculating the Children benefits, 
+                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in Taxes. Your children's benefits will be $${Child * 10}. 
+                     Your net income will be $${MonthIn + (Child * 10) - Taxes}`);  //Calculating the Children benefits, Displaying results
                 }
 
                 // This is the Medium $ Tax Bracket.
 
                 else if (MonthIn > 500 && MonthIn <= 700) {
                     let TaxB = "Medium Tax Bracket";
-                    let Taxes = (MonthIn - 500) * 0.15;
-                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in taxes.)
-                    Your net income will be $${MonthIn - Taxes}`);
+                    let Taxes = (MonthIn - 500) * 0.15;  //Made Taxes from Monthly Gross Income minus 500 then, multiply by 0.15
+                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. 
+                    You will owe $${Taxes} in taxes.)
+                    Your net income will be $${MonthIn - Taxes}`); // Displays results, showing the calculations 
                 }
 
                 // This is the High $ Tax Bracket.
 
                 else if (MonthIn > 700) {
                     let TaxB = "High Tax Bracket"
-                    let Taxes = (((MonthIn - (MonthIn - 700) - 500) * 0.15) + ((MonthIn - 700) * 0.25))
-                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in taxes. Your net income will be $${MonthIn - Taxes}`);
+                    let Taxes = (((MonthIn - (MonthIn - 700) - 500) * 0.15) + ((MonthIn - 700) * 0.25))  
+                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in taxes. Your net income will be $${MonthIn - Taxes}`);  //Displays results and shows tha calculation.
                 }
 
-                // This is when user enter incorrect value.
+                // (Below) This is when user enter incorrect value, for example letters rather than numbers.
 
                 else{
                     alert ("Incorrect value! Please incert numbers ONLY.")
                 }
-                //------------------------------------------------------------------
-                //END
+                //--------------------------------------------------------------------------------
+                //**END**
 
             </script>
 
@@ -131,11 +131,14 @@
             </li>
 
             <script>
+
                 // =================== 
                 // 2.) Person's Details
                 // ===================
                 //START
                 //-----------------------------------------------------
+                const name = prompt("Please enter your first and last name."); //Asking users to enter their names.
+                alert(`Hello, ${name}`)
             </script>
         </ol>    
     </body>
