@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="./cat_full_left.ico" type="image/x-icon">
         <title>Jericho's Assignment 1</title>
         <style>
             body {
                 font-family: helvetica;
-                background-color: #FAF9F6;
+                background-color: #FFDBDB;
             }
             h1 {
                 color: crimson;
@@ -33,6 +34,7 @@
             }
             h1 {
                 text-align:center;
+                font-weight: bold;
             }
             ul > li {
                 margin-top: 0; 
@@ -87,8 +89,12 @@
                     let TaxB = "Low Tax Bracket";                  
                     let Taxes = MonthIn * 0;  // made Taxes from Monthly Gross Income multiply by 0
                     Child = parseInt(prompt("In your familia, How many children do you have?"));      //Ask user how many children they have
-                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in Taxes. Your children's benefits will be $${Child * 10}. 
-                     Your net income will be $${MonthIn + (Child * 10) - Taxes}`);  //Calculating the Children benefits, Displaying results
+                    alert 
+                    (`Your gross income will be $${MonthIn}.
+                     You will be in ${TaxB}.
+                      You will owe $${Taxes} in Taxes. 
+                      Your children's benefits will be $${Child * 10}. 
+                     Your net income will be $${MonthIn + (Child * 10) - Taxes}.`);  //Calculating the Children benefits, Displaying results
                 }
 
                 // This is the Medium $ Tax Bracket.
@@ -96,9 +102,11 @@
                 else if (MonthIn > 500 && MonthIn <= 700) {
                     let TaxB = "Medium Tax Bracket";
                     let Taxes = (MonthIn - 500) * 0.15;  //Made Taxes from Monthly Gross Income minus 500 then, multiply by 0.15
-                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. 
+                    alert 
+                    (`Your gross income will be $${MonthIn}.
+                     You will be in ${TaxB}. 
                     You will owe $${Taxes} in taxes.)
-                    Your net income will be $${MonthIn - Taxes}`); // Displays results, showing the calculations 
+                    Your net income will be $${MonthIn - Taxes}.`); // Displays results, showing the calculations 
                 }
 
                 // This is the High $ Tax Bracket.
@@ -106,7 +114,11 @@
                 else if (MonthIn > 700) {
                     let TaxB = "High Tax Bracket"
                     let Taxes = (((MonthIn - (MonthIn - 700) - 500) * 0.15) + ((MonthIn - 700) * 0.25))  
-                    alert (`Your gross income will be $${MonthIn}. You will be in ${TaxB}. You will owe $${Taxes} in taxes. Your net income will be $${MonthIn - Taxes}`);  //Displays results and shows tha calculation.
+                    alert 
+                    (`Your gross income will be $${MonthIn}. 
+                    You will be in ${TaxB}. 
+                    You will owe $${Taxes} in taxes. 
+                    Your net income will be $${MonthIn - Taxes}.`);  //Displays results and shows tha calculation.
                 }
 
                 // (Below) This is when user enter incorrect value, for example letters rather than numbers.
@@ -138,8 +150,24 @@
                 // ===================
                 //START
                 //-----------------------------------------------------
-                const name = prompt("Please enter your first and last name."); //Asking users to enter their names.
-                alert(`Hello, ${name}`)
+                const name = prompt("Greetings, Please enter your first and last name."); //Asking users to enter their names.
+                if (name.charAt(0) === "A" || name.charAt(0) === "E" || name.charAt(0) === "I" || name.charAt(0) === "O" || name.charAt(0) === "U") {
+                    alert 
+                    (`Hello ${name}!
+                     Your name is ${name.length -1} letters long. 
+                    Your name begins with a vowel which is the letter "${name.charAt(0)}"),
+                    The last letter of yout name is "${name.charAt(name.length -1)}".`)
+                }
+
+                else {
+                    alert
+                     (`Hello ${name}! 
+                    Your name is ${name.length -1} letters long.
+                    Your name begins with a consonant which is the letter "${name.charAt(0)}",
+                    The last letter of your name is "${name.charAt(name.length -1)}".`)
+                }
+                //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                //**END**
             </script>
         </ol>    
     </body>
