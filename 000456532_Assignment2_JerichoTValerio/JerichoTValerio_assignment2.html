@@ -5,7 +5,7 @@
     <style>
       body {
         font-family: helvetica;
-        background-color:#F8F0E3;
+        background-color: #f8f0e3;
       }
       h1 {
         color: crimson;
@@ -157,13 +157,10 @@
 
           if (checkforsix == 0 && checkforfour == 0) console.log("𝓦𝓐𝓛𝓛𝓞𝓟!");
           //WALLOP means if the number is divisible by both 6 and 4.
-
           else if (checkforsix == 0) console.log("𝗦𝗠𝗔𝗦𝗛!");
           // SMASH means if the number is divisible by 6.
-
           else if (checkforfour == 0) console.log("𝘽𝘼𝙉𝙂!");
           //BANG means if the number is divisible by 4.
-
           else console.log(numbers);
           //This displays the numbers, (X) BANG, SMASH, WALLOP (X).
         }
@@ -229,6 +226,16 @@
           "Jericho",
           "Gian",
         ];
+
+        console.log(students.length);
+
+        let longest = students[0];
+        for (let i = 0; i < students.length; i++) {
+          if (students[i].length > longest.length) {
+            longest = students[i];
+          }
+        }
+        console.log(longest);
       </script>
     </ol>
   </body>
