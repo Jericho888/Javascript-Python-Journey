@@ -5,6 +5,7 @@
     <style>
       body {
         font-family: helvetica;
+        background-color:#F8F0E3;
       }
       h1 {
         color: crimson;
@@ -93,41 +94,29 @@
         // ====================
         // 1.) Colours of the Rainbow
         // ====================
-        const color = prompt(
-          "Hey! What's your favourite color?"
-        ); //Asking users to enter their fav color.
-        if (
-          color.charAt() === "Red" ||
-          color.charAt(1) === "Orange" ||
-          color.charAt(2) === "Yellow" ||
-          color.charAt(3) === "Green" ||
-          color.charAt(4) === "Indigo" ||
-          color.charAt(5) === "Blue"  ||
-          color.charAt(6) === "Violet" 
-         
-        ) {
-          //Inputting the vowels.
-          console.log(`ʅ（‾◡◝）ʃ   Hello ${color}! 
-                     Your fav color is ${color.length - 1} letters long. 
-                    Your name begins with a vowel which is the letter "${color.charAt(
-                      0
-                    )}"),
-                    The last letter of yout name is "${color.charAt(
-                      color.length - 1
-                    )}".`);
-        }
+        const color = [
+          "Red",
+          "Orange",
+          "Yellow",
+          "Green",
+          "Indigo",
+          "Blue",
+          "Violet",
+        ];
+        prompt("Hey! What's your favourite color?"); //Asking users to enter their fav color.
 
-        //This function is for letting users know how many letters are in their name, and first and last letter of their name.
-        else {
-          console.log(`ʅ（‾◡◝）ʃ   Hello ${color}! 
-                    Your name is ${color.length - 1} letters long.
-                    Your name begins with a consonant which is the letter "${color.charAt(
-                      0
-                    )}",
-                    The last letter of your name is "${color.charAt(
-                      color.length - 1
-                    )}".`); // Greeting the user, 0 means from the start of the letter and -1 means in the end of a letter.
-        }
+        color.includes(
+          "Red",
+          "Orange",
+          "Yellow",
+          "Green",
+          "Indigo",
+          "Blue",
+          "Violet"
+        ) !== -1;
+        console.log();
+
+        color.some((elem) => elem.toLowerCase() === "Red"); // true
       </script>
 
       <li>
@@ -156,9 +145,28 @@
       </li>
 
       <script>
-        // ===================
-        // 2.) 99 Bottles of Beer on the Wall
-        // ===================
+        // ===================================_
+        // 2.) 99 Bottles of Beer on the Wall _=
+        // ===================================
+
+        //declaring the numbers.
+        for (var numbers = 99; numbers >= 0; numbers -= 1) {
+          var checkforsix = numbers % 6;
+          var checkforfour = numbers % 4;
+          // Adding the scenerio if divisible by 6 OR if divisible by 4.
+
+          if (checkforsix == 0 && checkforfour == 0) console.log("𝓦𝓐𝓛𝓛𝓞𝓟!");
+          //WALLOP means if the number is divisible by both 6 and 4.
+
+          else if (checkforsix == 0) console.log("𝗦𝗠𝗔𝗦𝗛!");
+          // SMASH means if the number is divisible by 6.
+
+          else if (checkforfour == 0) console.log("𝘽𝘼𝙉𝙂!");
+          //BANG means if the number is divisible by 4.
+
+          else console.log(numbers);
+          //This displays the numbers, (X) BANG, SMASH, WALLOP (X).
+        }
       </script>
 
       <li>
@@ -195,8 +203,8 @@
       </li>
 
       <script>
-        // ===================
-        // 3.) Student Names
+        // ===================_
+        // 3.) Student Names  _=
         // ===================
         const students = [
           "Jean",
