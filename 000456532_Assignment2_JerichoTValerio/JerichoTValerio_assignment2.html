@@ -91,32 +91,36 @@
       </li>
 
       <script>
-        // ====================
+        // ===========================
         // 1.) Colours of the Rainbow
-        // ====================
-        const color = [
-          "Red",
-          "Orange",
-          "Yellow",
-          "Green",
-          "Indigo",
-          "Blue",
-          "Violet",
+        // ===========================
+        const rainbowColours = [
+          //delclaring the colors of the rainbow.
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "blue",
+          "indigo",
+          "violet",
         ];
-        prompt("Hey! What's your favourite color?"); //Asking users to enter their fav color.
+        const favourite = prompt(
+          "Hey!  ( ͡ಠ ͜ʖ ͡ಠ)  What's your favourite colour?" //asking user's favourite colour.
+        ).toLocaleLowerCase(); //convert to lower case.
+        let newRainbow = "";
 
-        color.includes(
-          "Red",
-          "Orange",
-          "Yellow",
-          "Green",
-          "Indigo",
-          "Blue",
-          "Violet"
-        ) !== -1;
-        console.log();
-
-        color.some((elem) => elem.toLowerCase() === "Red"); // true
+        for (let colours of rainbowColours) {
+          if (favourite === colours) {
+            rainbowColours.splice(favourite, 1);
+            console.log(
+              (newRainbow += rainbowColours.sort().reverse().join(" *** ")) //adding ***
+            );
+            break;
+          } else {
+            console.log(newRainbow + rainbowColours.sort().join(" xxx ")); //adding xxx between rainbow colours.
+            break;
+          }
+        }
       </script>
 
       <li>
@@ -145,24 +149,22 @@
       </li>
 
       <script>
-        // ===================================_
-        // 2.) 99 Bottles of Beer on the Wall _=
+        // ===================================
+        // 2.) 99 Bottles of Beer on the Wall
         // ===================================
 
-        //declaring the numbers.
         for (var numbers = 99; numbers >= 0; numbers -= 1) {
+          //declaring the numbers.
           var checkforsix = numbers % 6;
-          var checkforfour = numbers % 4;
-          // Adding the scenerio if divisible by 6 OR if divisible by 4.
+          var checkforfour = numbers % 4; // Adding the scenerio if divisible by 6 OR if divisible by 4.
 
           if (checkforsix == 0 && checkforfour == 0) console.log("𝓦𝓐𝓛𝓛𝓞𝓟!");
           //WALLOP means if the number is divisible by both 6 and 4.
           else if (checkforsix == 0) console.log("𝗦𝗠𝗔𝗦𝗛!");
           // SMASH means if the number is divisible by 6.
-          else if (checkforfour == 0) console.log("𝘽𝘼𝙉𝙂!");
-          //BANG means if the number is divisible by 4.
-          else console.log(numbers);
-          //This displays the numbers, (X) BANG, SMASH, WALLOP (X).
+          else if (checkforfour == 0)
+            console.log("𝘽𝘼𝙉𝙂!"); //BANG means if the number is divisible by 4.
+          else console.log(numbers); //This displays the numbers, (X) BANG, SMASH, WALLOP (X).
         }
       </script>
 
@@ -200,10 +202,11 @@
       </li>
 
       <script>
-        // ===================_
-        // 3.) Student Names  _=
-        // ===================
+        // =====================
+        // 3.) Student Names
+        // =====================
         const students = [
+          //declaring all student's names
           "Jean",
           "Tsz",
           "Raghav",
@@ -227,15 +230,26 @@
           "Gian",
         ];
 
-        console.log(students.length);
+        console.log("The number of students are " + students.length); //showing how many students are in this class.
 
-        let longest = students[0];
+        let longest = students[0]; //start from 0, (jean)
         for (let i = 0; i < students.length; i++) {
           if (students[i].length > longest.length) {
-            longest = students[i];
+            longest = students[i]; //function for the student who has longest name.
           }
         }
-        console.log(longest);
+        console.log("The longest name is " + longest); //displays student who has longest name (Harinderpal).
+
+        let el = students.filter((a) => a.includes("M")); //filters students who has the capital letter M in their name.
+
+        let le = students.filter((b) => b.includes("m")); //filters students who has the lowercase letter m in their name.
+        let sum = el.concat(le); //merges both arrays.
+
+        console.log(sum); //displays both results of arrays.
+        console.log("There are 5 names containing the letter m"); //displays both capital and lowercase of m in student's names.
+
+        let ll = students.filter((c) => c.includes("J"));
+        console.log("There are " + ll + " who starts with J"); //displays both capital and lowercase of j in student's names.
       </script>
     </ol>
   </body>
