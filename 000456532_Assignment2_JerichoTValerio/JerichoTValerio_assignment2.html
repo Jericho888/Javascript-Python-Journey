@@ -242,26 +242,26 @@
           "Gian",
         ];
 
-        console.log("The number of students are " + students.length); //showing how many students are in this class.
+        console.log("The number of students are " + students.length);                      //showing how many students are in this class.
 
-        let longest = students[0]; //start from 0, (jean)
+        let longest = students[0];                                                    //start from 0, (jean)
         for (let i = 0; i < students.length; i++) {
           if (students[i].length > longest.length) {
-            longest = students[i]; //function for the student who has longest name.
+            longest = students[i];                                            //function for the student who has longest name.
           }
         }
-        console.log("The longest name is " + longest); //displays student who has longest name (Harinderpal).
+        console.log("The longest name is " + longest);                                             //displays student who has longest name (Harinderpal).
 
-        const bigM = students.filter((a) => a.includes("M")); //filters students who has the capital letter M in their name.
+        const bigM = students.filter((a) => a.includes("M"));                                      //filters students who has the capital letter M in their name.
 
-        const smallM = students.filter((b) => b.includes("m")); //filters students who has the lowercase letter m in their name.
-         const sum = bigM.concat(smallM); //merges both arrays.
+        const smallM = students.filter((b) => b.includes("m"));                                   //filters students who has the lowercase letter m in their name.
+         const sum = bigM.concat(smallM);                                  //merges both arrays.
 
-        console.log(sum); //displays both results of arrays.
-        console.log("There are 5 names containing the letter M."); //displays both capital and lowercase of m in student's names.
+        console.log(sum);                                                         //displays both results of arrays.
+        console.log("There are 5 names containing the letter M.");                     //displays both capital and lowercase of m in student's names.
 
         const all = students.filter((c) => c.includes("J"));
-        console.log("There are " + all + " who starts with the letter J."); //displays both capital and lowercase of j in student's names.
+        console.log("There are " + all + " who starts with the letter J.");                  //displays both capital and lowercase of j in student's names.
       </script>
     </ol>
   </body>
