@@ -149,23 +149,35 @@
       </li>
 
       <script>
-        // ===================================
+        // =================================== 
         // 2.) 99 Bottles of Beer on the Wall
         // ===================================
 
-        for (var numbers = 99; numbers >= 0; numbers -= 1) {
+        for (let numbers = 99; numbers >= 0; numbers -= 1) {
           //declaring the numbers.
-          var checkforsix = numbers % 6;
-          var checkforfour = numbers % 4; // Adding the scenerio if divisible by 6 OR if divisible by 4.
+          let checkforsix = numbers % 6;
+          let checkforfour = numbers % 4;                                 // Adding the scenerio if divisible by 6 OR if divisible by 4.
 
-          if (checkforsix == 0 && checkforfour == 0) console.log("𝓦𝓐𝓛𝓛𝓞𝓟!");
-          //WALLOP means if the number is divisible by both 6 and 4.
-          else if (checkforsix == 0) console.log("𝗦𝗠𝗔𝗦𝗛!");
+            //WALLOP means if the number is divisible by both 6 and 4.
+
+          if (checkforsix === 0 && checkforfour === 0) {
+          console.log("𝓦𝓐𝓛𝓛𝓞𝓟!");
+          }
+
+          else if (checkforsix === 0) {
+            console.log("𝗦𝗠𝗔𝗦𝗛!");
+          } 
+
           // SMASH means if the number is divisible by 6.
-          else if (checkforfour == 0)
-            console.log("𝘽𝘼𝙉𝙂!"); //BANG means if the number is divisible by 4.
-          else console.log(numbers); //This displays the numbers, (X) BANG, SMASH, WALLOP (X).
+
+          else if (checkforfour === 0) {
+            console.log("𝘽𝘼𝙉𝙂!");
+          }
+                                                      //BANG means if the number is divisible by 4.
+          else {
+            console.log(numbers);                                       //This displays the numbers, (X) BANG, SMASH, WALLOP (X).
         }
+      }
       </script>
 
       <li>
@@ -240,16 +252,16 @@
         }
         console.log("The longest name is " + longest); //displays student who has longest name (Harinderpal).
 
-        let el = students.filter((a) => a.includes("M")); //filters students who has the capital letter M in their name.
+        const bigM = students.filter((a) => a.includes("M")); //filters students who has the capital letter M in their name.
 
-        let le = students.filter((b) => b.includes("m")); //filters students who has the lowercase letter m in their name.
-        let sum = el.concat(le); //merges both arrays.
+        const smallM = students.filter((b) => b.includes("m")); //filters students who has the lowercase letter m in their name.
+         const sum = bigM.concat(smallM); //merges both arrays.
 
         console.log(sum); //displays both results of arrays.
         console.log("There are 5 names containing the letter M."); //displays both capital and lowercase of m in student's names.
 
-        let ll = students.filter((c) => c.includes("J"));
-        console.log("There are " + ll + " who starts with the letter J."); //displays both capital and lowercase of j in student's names.
+        const all = students.filter((c) => c.includes("J"));
+        console.log("There are " + all + " who starts with the letter J."); //displays both capital and lowercase of j in student's names.
       </script>
     </ol>
   </body>
