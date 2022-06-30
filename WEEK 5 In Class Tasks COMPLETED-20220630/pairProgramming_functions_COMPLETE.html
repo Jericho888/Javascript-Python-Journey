@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pair Programming</title>
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            h1 {
+                color: crimson;
+            }
+            em { 
+                font-weight: bold; 
+                font-style: normal; 
+                text-decoration: underline; 
+                font-size: 1.2em; 
+            }
+            li {
+                margin: 20px;
+            }
+            ol { 
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li > ol > li {
+                margin: 10px;
+            }
+            p { 
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            h1 {
+                text-align:center;
+            }
+            ul > li {
+                margin-top: 0; 
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Pair Programming</h1>
+
+        <p>
+            Pair programming is a software development technique in which two programmers work together at the same workstation on the same project. One, the <strong>driver</strong>, writes code while the other, the <strong>observer</strong> or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently. Talking, discussing and explaining are highly encouraged.
+        </p>
+
+        <ol>
+
+            <li><em>Number Functions</em>
+                <br>
+                Write code and use functions that take in a single array and checks to see that all items are numbers. If they are, your code should produce the following console.log:<br>
+                "There are (X) numbers in this array.<br>
+                 The total sum of all numbers is (Y).<br>
+                 The average of all numbers is (Z).<br>
+                 The are (A) numbers that are greater than 10.<br>
+                 The largest number in the array is (W)"<br><br>
+
+                If the array contains an item that is not a number, or multi items that are not numbers, your code should just console.log "ERROR: (B), (C), (D) are/is not a number".<br><br>
+
+                Try to use multiple functions in your code to have it organised better. For instance one function could calculate and return the sum of the array, another code check to see if the array contains numbers and return true or false etc. Then one main function could call these to perform the program.
+            </li>
+
+            <script>
+                // ====================
+                // Pair Programming
+                // ====================
+                const testArr1 = [20, 30, 40, 50];
+                const testArr2 = [200, 3, 13, 22, 29, 35, 121, 78, 80, 91];
+                const testArr3 = [20, 30, 40, "James", 12];
+                const testArr4 = [2, 3, 13, 22, 9, 44, [], 35, 121, 3, 0, "James", 12, -25];
+
+                // There are (X) numbers in this array.
+                function arrLength(arr) {
+                    return arr.length;
+                }
+
+                // The total sum of all numbers is (Y).<br>
+                function arrSum(arr) {
+                    let sum = 0;
+                    for (let num of arr) {
+                        sum += num;
+                    }
+                    return sum
+                }
+
+                // The average of all numbers is (Z).<br>
+                function arrAvg(arr) {
+                    return arrSum(arr) / arr.length;
+                }
+
+                // The are (A) numbers that are greater than 10.<br>
+                function numGreaterThan10(arr) {
+                    let greaterThanTen = 0;
+                    for (let num of arr) {
+                        if (num > 10) {
+                            greaterThanTen += 1;
+                        }
+                    }
+                    return greaterThanTen;
+                }
+
+                // The largest number in the array is (W)"<br><br>
+                function largestNum(arr) {
+                    Math.max(...arr);
+                }
+
+                function allInOne(arr) {
+                    return `"There are ${arrLength(arr)} numbers in this array.
+                 The total sum of all numbers is ${arrSum(arr)}.
+                 The average of all numbers is ${arrAvg(arr)}.
+                 The are ${numGreaterThan10(arr)} numbers that are greater than 10.
+                 The largest number in the array is ${largestNum(arr)}"`
+                }
+
+                console.log(allInOne(testArr1));
+
+            </script>
+        </ol>    
+    </body>
+</html>
