@@ -49,6 +49,7 @@
 <body>
     <h1>Objects</h1>
     <script>
+
         // ==============
         // Object Basics
         // ==============
@@ -70,6 +71,10 @@
         personObj.addy = "Burnaby";
 
         console.log(personObj)
+        console.log(personObj.mother)
+
+
+
 
 
 
@@ -85,17 +90,16 @@
             let qNum = 1;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
 
-            /*
-            const favouriteObj = (
-                colour = "brown";
-                movie = "Gladiator"
-                song = "Oops I did it again"
-                food = "Hot dog";
-                number = 7;
-            )
-            console.log(favouriteobj);
-            console.log(favouriteObj[colour]);
-            */
+
+            const favouriteObj = {
+                colour: "Brown",
+                movie: "Gladiator",
+                song: "Oops I did it again",
+                food: "Hot dog",
+                number: 7
+            }
+            console.log(favouriteObj);
+
         </script>
 
 
@@ -109,6 +113,16 @@
             qNum++;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
 
+            const famObj = {
+                father: "Benson",
+                sister: "Jessica",
+                brother: "Jefferson",
+            }
+
+            console.log(famObj);
+            console.log("my father's name is " + famObj["father"]);
+            console.log("my sister's name is " + famObj["sister"]);
+            console.log("my brother's name is " + famObj["brother"]);
         </script>
 
 
@@ -121,6 +135,14 @@
             qNum++;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
 
+            const countryObj = {
+                canada: "Toronto",
+                usa: "New York",
+                mexico: "Encanto",
+                uk: "London"
+            }
+
+            console.log(countryObj)
         </script>
 
 
@@ -132,6 +154,12 @@
         <script>
             qNum++;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
+
+            countryObj.canada = "Vancouver";
+            countryObj["italy"] = "Rome";
+            countryObj["france"] = "Paris"
+
+            console.log(countryObj)
 
         </script>
 
@@ -147,6 +175,15 @@
         <script>
             qNum++;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
+
+            const myselfObj = {
+                name: "Jericho",
+                year: 2002,
+                addy: "Burnaby",
+                hobbies: ["Music", "Gaming", "Learning", "Reading", "Eating"],
+                isEnrolledInVCC: true,
+            }
+            console.log(myselfObj)
 
         </script>
 
@@ -168,6 +205,14 @@
             qNum++;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
 
+           if (myselfObj.isEnrolledInVCC === true);
+           console.log("I am THE student");
+          
+
+            
+
+
+
         </script>
 
 
@@ -183,6 +228,7 @@
         <script>
             qNum++;
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
+
 
         </script>
 
