@@ -92,11 +92,31 @@
         </li>
 
         <script>
-                // =============================
-                // 1.) Detailed Country Objects
-                // =============================
-                
+            // =============================
+            // 1.) Detailed Country Objects
+            // =============================
 
+            const countriesObj = {
+                nameUSA: "United States of AMERICA ︻デ═一",
+                populationUSA: 332915073,
+                capitalUSA: "Washington, D.C.",
+                isMonarchyUSA: false,
+
+                nameFRA: "French Republic",
+                populationFRA: 67399000,
+                captitalFRA: "Paris 🥐 ",
+                isMonarchyFRA: false,
+
+                nameUK: "The United Kingdom",
+                populationUK: 68207116,
+                capitalUK: "London )xx[;;;;;;;;> ",
+                isMonarchyUK: false,
+                stateDetails: function () {
+                    console.log("Names: " + [this.nameUSA + " "  + " " + this.nameFRA  +  " " + this.nameUK]);
+                    console.log(this.populationUSA)
+                },
+            }
+            countriesObj.stateDetails();
         </script>
 
         <li><em>Counting Items in Huge Array</em>
