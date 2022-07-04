@@ -111,11 +111,42 @@
                 populationUK: 68207116,
                 capitalUK: "London )xx[;;;;;;;;> ",
                 isMonarchyUK: false,
+
+
+
                 stateDetails: function () {
-                    console.log("Names: " + [this.nameUSA + " "  + " " + this.nameFRA  +  " " + this.nameUK]);
-                    console.log(this.populationUSA)
-                },
+
+                    console.log(this.nameUSA + " is a country with a population of " + this.populationUSA.toLocaleString('en-US') + " and the capital city is " + this.capitalUSA + " " + (countriesObj.isMonarchyUSA));
+                    if (countriesObj.isMonarchyUSA === false) {
+                        console.log(" This country is not a monarchy.");
+                    } else {
+                        console.log(" This country is a monarchy.");
+                    };
+
+                    console.log(this.nameFRA + " is a country with a population of " + this.populationFRA.toLocaleString('en-US') + " and the capital city is " + this.captitalFRA + " " + (countriesObj.isMonarchyFRA));
+                    if (countriesObj.isMonarchyFRA === false) {
+                        console.log(" This country is not a monarchy.");
+                    } else {
+                        console.log(" This country is a monarchy.");
+                    };
+
+                    console.log(this.nameUK + " is a country with a population of " + this.populationUK.toLocaleString('en-US') + " and the capital city is " + this.capitalUK + " " + (countriesObj.isMonarchyUK));
+                    if (countriesObj.isMonarchyUK === false) {
+                        console.log(" This country is not a monarchy.");
+                    } else {
+                        console.log(" This country is a monarchy.");
+                    };
+                }
+
+
             }
+
+
+            const countryLoop = [this.nameFRA, this.nameUK, this.nameUSA, this.populationFRA, this.populationUK, this.populationUSA, this.capitalUK, this.capitalUSA, this.captitalFRA, this.isMonarchyFRA, this.isMonarchyUK, this.isMonarchyUSA];
+            for (let i = 0; i < countryLoop.length; i++) {
+                console.log(countryLoop[i])
+            }
+
             countriesObj.stateDetails();
         </script>
 
