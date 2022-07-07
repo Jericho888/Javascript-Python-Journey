@@ -98,11 +98,11 @@
             // =============================
 
             const countriesObj = {
-                nameUSA: "United States of AMERICA ︻デ═一",
+                nameUSA: "United States of AMERICA ︻デ═一",      //adding Objs(names,population,capital and monarchy)
                 populationUSA: 332915073,
                 capitalUSA: "Washington, D.C.",
                 isMonarchyUSA: false, 
-
+                                                              //all are false in monarchy
                 nameFRA: "French Republic",
                 populationFRA: 67399000,
                 captitalFRA: "Paris 🥐 ",
@@ -115,7 +115,7 @@
 
 
 
-                stateDetails: function () {
+                stateDetails: function () {                              //made a function to display in console log, but have problems in if this country is monarchy, cant put in one log
 
                     console.log(this.nameUSA + " is a country with a population of " + this.populationUSA.toLocaleString('en-US') + " and the capital city is " + this.capitalUSA + " " + (countriesObj.isMonarchyUSA));
                     if (false) {
@@ -142,13 +142,16 @@
                 }
 
 
-            }
+            };
 
+                          //below have made a loop
 
             const countryLoop = [this.nameFRA, this.nameUK, this.nameUSA, this.populationFRA, this.populationUK, this.populationUSA, this.capitalUK, this.capitalUSA, this.captitalFRA, this.isMonarchyFRA, this.isMonarchyUK, this.isMonarchyUSA];
             for (let i = 0; i < countryLoop.length; i++) {
                 console.log(countryLoop[i])
-            }
+            };
+
+         // below i have displayed
 
             countriesObj.stateDetails();
         </script>
@@ -201,6 +204,64 @@
                 "H", "Z", "B", "L", "N", "H", "U", "L", "D", "C", "A", "M",
                 "U", "X", "W", "K", "W", "A", "J", "R", "T", "C", "A", "M",
                 "P", "K", "U", "D", "U", "B", "U", "B", "G", "W", "J", "F"];
+
+                const alphaObj = {                               //setting A to Z to the value of 0
+                    A: 0,
+            	    B: 0,
+            		C: 0,
+                    D: 0,
+            	    E: 0,
+            		F: 0,
+                    G: 0,
+            	    H: 0,
+            		I: 0,
+                    J: 0,
+            	    K: 0,
+            		L: 0,
+                    M: 0,
+            	    N: 0,
+            		O: 0,
+                    P: 0,
+            	    Q: 0,
+            		R: 0,
+                    S: 0,
+            	    T: 0,
+            		U: 0,
+                    V: 0,
+            	    W: 0,
+            		X: 0,
+                    Y: 0,
+            	    Z: 0,
+                };
+
+                for (let letters of bigLettersArr) {
+                    alphaObj [ letters ] += 1;                                    
+                };
+                console.log(alphaObj);                                 //made a for statement for the array
+                                                                      
+                let displayLetters = " ";
+                for (let show in alphaObj) {
+                    displayLetters += show + " = " + alphaObj [ show ] + "\n";
+                };
+
+                let up = 1;
+                let down = 0;
+                let product;
+                for (let i=0; i<bigLettersArr.length; i++) {
+                    for (let j=i; j<bigLettersArr.length; j++){
+                        if (bigLettersArr[i] === bigLettersArr[j])
+                        down++;
+                        if (up < down) {
+                            (up = down) ;
+                            item = bigLettersArr [i];
+                        };
+                    };
+                    down = 0;
+                };
+
+                // below displays the results in console log (also shows undefined, I didn't have enough time and I'm sorry. Math finals.)
+
+             console.log(product+ "appears to be the most in the array at " + up + " times!!!");
 
         </script>
     </ol>
