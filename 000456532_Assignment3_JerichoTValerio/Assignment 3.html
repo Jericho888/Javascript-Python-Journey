@@ -6,6 +6,7 @@
     <style>
         body {
             font-family: helvetica;
+            background-color: beige;
         }
 
         h1 {
@@ -100,7 +101,7 @@
                 nameUSA: "United States of AMERICA ︻デ═一",
                 populationUSA: 332915073,
                 capitalUSA: "Washington, D.C.",
-                isMonarchyUSA: false,
+                isMonarchyUSA: false, 
 
                 nameFRA: "French Republic",
                 populationFRA: 67399000,
@@ -117,7 +118,7 @@
                 stateDetails: function () {
 
                     console.log(this.nameUSA + " is a country with a population of " + this.populationUSA.toLocaleString('en-US') + " and the capital city is " + this.capitalUSA + " " + (countriesObj.isMonarchyUSA));
-                    if (countriesObj.isMonarchyUSA === false) {
+                    if (false) {
                         console.log(" This country is not a monarchy.");
                     } else {
                         console.log(" This country is a monarchy.");
