@@ -102,7 +102,7 @@
                     this.numberOfLegs = para3;
                 }
                 animalSays(sound) {
-                    console.log(this.name + " says " + this.sound);
+                    console.log(this.name + " says " + sound);
                 }
 
             }
@@ -110,13 +110,21 @@
             const snake = new TheAnimals("snake", "limbless reptiles", 0);
             const bird = new TheAnimals("bird", "vertebrates", 2);
             const horse = new TheAnimals("horse", "hoofed herbivorous mammal", 4);
-            console.log(dog, snake, bird, horse);
-            dog.animalSays;
-            snake.animalSays;
-            bird.animalSays;
-            horse.animalSays;
+            // console.log(dog, snake, bird, horse);
 
+            console.log(dog);
+            console.log(snake);
+            console.log(bird);
+            console.log(horse);
 
+            dog.animalSays('woof');
+            snake.animalSays('hiss');
+            bird.animalSays('churp');
+            horse.animalSays('nae');
+
+            function sayAnimals() {
+                console.log()
+            };
 
 
 
@@ -133,6 +141,20 @@
             qNum++; // 3
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
 
+            class Student {
+                constructor(para1, para2, para3) {
+                    this.name = para1;
+                    this.age = para2;
+                    this.subject = para3;
+                }
+
+            }
+            const ricoDetails = new Student("jericho", 19, ["English", " Math", "Networking"]);
+            console.log(ricoDetails)
+            console.log(ricoDetails.subject)
+            console.log(ricoDetails.subject[0])
+
+
         </script>
 
 
@@ -148,6 +170,16 @@
         <script>
             qNum++; // 4
             console.log("%c Question " + qNum + ". ", "color: #bada55; background: black;");
+
+            class StudentExtra {
+
+            }
+
+            const newRicoDetails= new Student("jericho", 19, ["English", " Math", "Networking"]);
+            console.log(ricoDetails)
+            console.log(ricoDetails.subject)
+            console.log(ricoDetails.subject[0])
+
 
         </script>
 

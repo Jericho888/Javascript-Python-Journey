@@ -68,24 +68,24 @@
 
             // Debug Q1
 
-            const arrXO = [("X", "X", "O", "X", "O")];
-            let count = 0;
-            let search = "X";
-            const checkX = confirm("Click OK for X and Cancel for O");
+            // const arrXO = [("X", "X", "O", "X", "O")];
+            // let count = 0;
+            // let search = "X";
+            // const checkX = confirm("Click OK for X and Cancel for O");
 
-            if (checkX) {
-                 search = "X";
-            }
-            else {
-                let search = "O";
-            }
+            // if (checkX) {
+            //     search = "X";
+            // }
+            // else {
+            //     let search = "O";
+            // }
 
-            for (let i =0; i<arrXO.length; i++) {
-                if (arrXO[i] === search) {
-                    count += 1;
-                }
-            }
-                console.log("There are " + count + " '" search + " '");
+            // for (let i = 0; i < arrXO.length; i++) {
+            //     if (arrXO[i] === search) {
+            //         count += 1;
+            //     }
+            // }
+            // console.log("There are " + count + " '" search + " '");
 
         </script>
 
@@ -103,23 +103,30 @@
             in the number 4, 13 or 14 however don't show the multiplications and instead console.log "UNLUCKY".
         </li>
         <script>
-            /*
+
             // Debug Q2
 
-            let message = "";
 
-            function multiplyNum {const x = prompt("Type in a number.");
-        if (x === 4 || 13 || 14) 
-            console.log("UNLUCK");
-            }
-            for (let i=1; i<12; i+=1) {
-         message = x + " * " + i + " = " + x * i + "\n";
-            }
-           console.log(message);
-         }
 
-            function multiplyNum();
-            */
+            // function multiplyNum() {
+            //     let message = "";
+            //     const x = parseInt(prompt("Type in a number."));
+
+            //     if (x === 4 || x === 13 || x === 14) {
+            //         console.log("UNLUCK");
+            //         return;
+            //     }
+
+            //     for (let i = 1; i < 12; i += 1) {
+            //         message += x + " * " + i + " = " + x * i + "\n";
+            //     }
+            //     console.log(message);
+            // }
+
+            // multiplyNum();
+            // multiplyNum();
+            // multiplyNum();
+
         </script>
 
 
@@ -131,21 +138,21 @@
 
         </li>
         <script>
-            /*
+
             // Debug Q3
 
-            function displayCountry(county) {
+            function displayCountry(country) {
                 const countries = ["USA", "France", "Germany", "Italy"];
-                const capitals = ["Berlin", "Rome" "Washington", "Paris", ];
+                const capitals = ["Washington", "Paris", "Berlin", "Rome"];
 
-                if (countries.includes(country) = true) {
-                    break capitals[1] + " is the capital of " + country;
+                if (countries.includes(country)) {
+                    console.log(capitals[countries.indexOf(country)] + " is the capital of " + country);
                 }
-                if (countries.includes(country) = false) {
-                    break "No such country exists";
+                else {
+                    console.log("No such country exists");
                 }
             }
-            */
+
 
                 // Test this function in the console
         </script>
