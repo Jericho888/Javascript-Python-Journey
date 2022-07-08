@@ -119,24 +119,36 @@
 
                     console.log(this.nameUSA + " is a country with a population of " + this.populationUSA.toLocaleString('en-US') + " and the capital city is " + this.capitalUSA + " " + (countriesObj.isMonarchyUSA));
                     if (false) {
+
                         console.log(" This country is not a monarchy.");
+
                     } else {
+
                         console.log(" This country is a monarchy.");
+
                     };
 
                     console.log(this.nameFRA + " is a country with a population of " + this.populationFRA.toLocaleString('en-US') + " and the capital city is " + this.captitalFRA + " " + (countriesObj.isMonarchyFRA));
                     if (countriesObj.isMonarchyFRA === false) {
+
                         console.log(" This country is not a monarchy.");
+
                     } else {
+
                         console.log(" This country is a monarchy.");
+                        
                     };
 
 
 
                     console.log(this.nameUK + " is a country with a population of " + this.populationUK.toLocaleString('en-US') + " and the capital city is " + this.capitalUK + " " + (countriesObj.isMonarchyUK));
+
                     if (countriesObj.isMonarchyUK === false) {
+
                         console.log(" This country is not a monarchy.");
+
                     } else {
+
                         console.log(" This country is a monarchy.");
                     };
                 }
@@ -147,13 +159,17 @@
                           //below have made a loop
 
             const countryLoop = [this.nameFRA, this.nameUK, this.nameUSA, this.populationFRA, this.populationUK, this.populationUSA, this.capitalUK, this.capitalUSA, this.captitalFRA, this.isMonarchyFRA, this.isMonarchyUK, this.isMonarchyUSA];
+           
             for (let i = 0; i < countryLoop.length; i++) {
+
                 console.log(countryLoop[i])
+
             };
 
          // below i have displayed
 
             countriesObj.stateDetails();
+            
         </script>
 
         <li><em>Counting Items in Huge Array</em>
@@ -245,18 +261,29 @@
                 };
 
                 let up = 1;
+
                 let down = 0;
+
                 let product;
+
                 for (let i=0; i<bigLettersArr.length; i++) {
+
                     for (let j=i; j<bigLettersArr.length; j++){
+
                         if (bigLettersArr[i] === bigLettersArr[j])
+
                         down++;
+
                         if (up < down) {
+
                             (up = down) ;
+
                             item = bigLettersArr [i];
                         };
                     };
+
                     down = 0;
+
                 };
 
                 // below displays the results in console log (also shows undefined, I didn't have enough time and I'm sorry. Math finals.)
