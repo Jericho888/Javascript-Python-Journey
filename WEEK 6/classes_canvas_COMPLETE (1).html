@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Classes Canvas</title>
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            em { 
+                font-weight: bold; 
+                font-style: normal; 
+                text-decoration: underline; 
+                font-size: 1.2em; 
+            }
+            h1 {
+                text-align:center;
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 20px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+
+            #canvas {
+                border: solid 1px red;
+                width:  770px;
+                height:  500px;
+            }
+
+            .images {
+                width:  31%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Classes</h1>
+
+        <ol>
+        	<li><em>Create an Interactive Map of Canada using Classes, the HTML5 Canvas and JavaScript</em>
+                <br/>
+                The HTML5 Canvas allows us to draw shapes and create interactive games on the web using JavaScript. 
+                <br>
+                Below you'll find code showing how to draw a simple rectangle. The shapes require an x and y coordinate (x = 0 is most left position), (y = 0 is the top most position) as well as a number for width and height.
+                <br>
+                <code>ctx.fillRect(x, y, w, h)</code>
+                <br>
+                <ul>
+                    <li>
+                        Using a class to create objects representing each of the Canadian provinces, write code to draw each of the shapes on the canvas.
+                    </li>
+                    <li>
+                        Code has been provided to show you how to add a "click" event to the canvas and to read the x and y coordinates of where the click occured.
+                    </li>
+                    <li>
+                        Write code that will allow you to click a shape on the convas and show an <code>alert()</code> saying "X is clicked. It has a population of YYYY" where X is the province and YYYY is the population size. You may have to use object methods in conjunction with the "click" event.
+                    </li>
+                    <li>
+                        Write code so that when you hover over a shape it draws the province initials in the top left position.
+                    </li>
+                    <li>
+                        Write code so that when you hover off the shape it removes the province initials from it. You may have to redraw the shape over the text to give the appearance if it being removed. 
+                    </li>
+                </ul>
+                <br>
+                <br>
+
+                <img class="images" src="canada_1.png"/>
+                <img class="images" src="canada_2.png"/>
+                <img class="images" src="canada_3.png"/>
+            </li>
+            <li>
+                <em>Your Canvas</em>
+                <canvas id="canvas" width="770" height="500"></canvas>
+            </li>
+
+            <script>
+
+                const canvas = document.getElementById('canvas');
+                const ctx = canvas.getContext('2d');
+
+                const drawProvince = (provObj) => {
+                    ctx.fillStyle = provObj.colour;
+                    ctx.fillRect(provObj.x, provObj.y, provObj.w, provObj.h);
+                }
+
+                class Province {
+                    constructor(x, y, w, h, colour, name, population) {
+                        this.x = x;
+                        this.y = y;
+                        this.w = w;
+                        this.h = h;
+                        this.colour = colour;
+                        this.name = name;
+                        this.population = population
+                        this.textIsShown = false;
+                    }
+                    isClicked(clickX, clickY) {
+                        if (clickX > this.x && clickX < (this.x + this.w) &&
+                            clickY > this.y && clickY < (this.y + this.h)) {
+                            alert(`${this.name} is clicked. It has a population of ${this.population}`);
+                        }
+                    }
+                    isHovered(hovX, hovY) {
+                        if (hovX > this.x && hovX < (this.x + this.w) &&
+                            hovY > this.y && hovY < (this.y + this.h)) {
+                            if (!this.textIsShown) {
+                                ctx.fillStyle = '#000';
+                                ctx.font = '32px serif';
+                                ctx.fillText(this.name, this.x, this.y + 30);
+                                this.textIsShown = true;
+                            }
+                        }
+                        else {
+                            this.drawProvince(ctx);
+                            this.textIsShown = false;
+                        }
+                    }
+                    drawProvince(ctx){
+                        ctx.fillStyle = this.colour;
+                        ctx.fillRect(this.x, this.y, this.w, this.h);
+                    }
+                }
+
+                const m = 240;
+                const canadaArray = [
+                    new Province(0, 60, 110, 180, '#20f', 'YK', 6000000),
+                    new Province(110, 50, 200, 190, '#ae0', 'NWT', 6000000),
+                    new Province(310, 20, 130, 220, '#b4b', 'NU', 6000000),
+
+                    new Province(0, m, 120, 200, '#2398d2', 'BC', 6000000),
+                    new Province(120, m, 110, 180, '#36b97c', 'AB', 6000000),
+                    new Province(230, m, 80, 180, '#f0e330', 'SK', 6000000),
+
+                    new Province(310, m, 90, 180, '#ef6033', 'MA', 6000000),
+                    new Province(400, m+40, 130, 210, '#da252c', 'ON', 6000000),
+                    new Province(530, m-110, 130, 290, '#e01592', 'QB', 6000000),
+
+                    new Province(660, m-70, 100, 40, '#29abb6', 'LAB', 6000000),
+
+                    new Province(670, m-25, 60, 40, '#e40', 'PEI', 6000000),
+
+                    new Province(660, m+20, 40, 100, '#7a3696', 'NB', 6000000),
+                    new Province(700, m+20, 40, 100, '#a43636', 'NS', 6000000),
+                ];
+
+                canadaArray.forEach((p) => {
+                    p.drawProvince(ctx);
+                });
+
+                canvas.addEventListener('click', function(event) {
+                    console.log(event.offsetX, event.offsetY);
+
+                    canadaArray.forEach((p) => {
+                        p.isClicked(event.offsetX, event.offsetY);
+                    })
+                });
+
+                canvas.addEventListener('mousemove', function(event) {
+                    console.log(event.offsetX, event.offsetY);
+
+                    canadaArray.forEach((p) => {
+                        p.isHovered(event.offsetX, event.offsetY);
+                    })
+                });
+            	
+            </script>
+        </ol>
+    </body>
+</html>
