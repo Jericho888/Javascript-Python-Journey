@@ -57,7 +57,8 @@
             appear on a separate line.
         </li>
         <script>
-            for (let i = 0; i < 5; i += 0) {
+            for (let i = 0; i < 11; i += 1) {
+                // Code executed in the loop
                 console.log("the number is " + i);
             }
         </script>
@@ -68,9 +69,8 @@
             console log that states the 3 months of summer like so "X, Y and Z are the months of summer."
         </li>
         <script>
-                const monthsArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
-
-            console.log(monthsArray[5] + ", " + monthsArray[6] + " and " + monthsArray[7] + " are the months of summer.");
+            const fruitsArray = ["apple", "banana", "orange"];
+            console.log(fruitsArray[1]);
         </script>
 
         <li><em>How Many Months</em>
@@ -79,7 +79,14 @@
             of the array.
         </li>
         <script>
-            console.log("There are " + monthsArray.length + " months in a year.");
+            const jacket = true;
+            const umbrella = true;
+
+            if (jacket === true || umbrella === true) {
+                console.log("Hello world!")
+            } else {
+                console.log("Goodbye")
+            }
         </script>
 
         <li><em>Sorting Arrays</em>
@@ -89,9 +96,11 @@
             result.<br><code>const alphaArr = ["Berry", "Abacus", "Elephant", "Dolphin", "Engineer"];</code>
         </li>
         <script>
-            const alphaArr = ["Berry", "Abacus", "Elephant", "Dolphin", "Engineer"];
-            alphaArr.sort();
-            console.log(alphaArr);
+            function nameLOL(firstName) {
+                console.log("Welcome " + firstName);
+            }
+            nameLOL("Jericho");
+
         </script>
 
         <li><em>Check if Element is Inside Array</em>
