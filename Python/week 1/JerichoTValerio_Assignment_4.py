@@ -20,11 +20,11 @@
 """
 
 print("\nQ 1.")
-
+  
 
 
 """
-	2.) Tax Collector
+	2.) Tax Collector        
 
 	Write code that will ask the user, using an input, what their 
     monthly gross income is. If the user doesn't type in a number 
