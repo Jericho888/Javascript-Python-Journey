@@ -1,3 +1,4 @@
+import JerichoTValerio_AS4_book as book
 # Python Assignment 4
 # 
 # NOTE - RENAME ASSIGNMENT FILE yourname_Assignment_4.py
@@ -20,7 +21,8 @@
 """
 
 print("\nQ 1.")
-  
+
+print("There are " + len(JerichoTValerio_AS4_book))
 
 
 """
